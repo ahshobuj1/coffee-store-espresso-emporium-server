@@ -12,5 +12,13 @@
  * 5. make sure use - require('dotenv').config();
  * 6. at last off/comment - await client.close();
  *
+ * * Add New Coffee to Database
+ * 1. create a post api > async - await
+ * 2. get New Coffee value from - req.body
+ * 3. Follow Doc : crud operations - node.js - Usages Examples >Insert operations >Insert a Document
+ * 4. create coffeeCollection
+ * 5. coffeeCollection.InsertOne()
+ * 6. res.send()
+ *
  *
  */
