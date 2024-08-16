@@ -20,5 +20,11 @@
  * 5. coffeeCollection.InsertOne()
  * 6. res.send()
  *
+ * * Find Multiple Documents
+ * 1. create a get request
+ * 2. coffeeCollection.find()
+ * 3. make sure convert - toArray()
+ * 4. res.send()
+ *
  *
  */
