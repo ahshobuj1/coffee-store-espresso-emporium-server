@@ -32,4 +32,11 @@
  * 3. Query/filter for a coffee that has the id
  * 4. coffeeCollection.deleteOne()
  * 5. res.send()
+ *
+ * * Find a document with id
+ * 1. create a get request with params - ex -> '/coffee/:id'
+ * 2. get id from -> req.params.id
+ * 3. Query/filter for the doc/coffee that has the id
+ * 4. await coffeeCollection.findOne()
+ * 5. res.send()
  */

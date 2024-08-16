@@ -31,7 +31,14 @@ async function run() {
             const cursor = coffeeCollection.find();
             const result = await cursor.toArray();
             res.send(result);
-            console.log(result);
+        });
+
+        app.get('/coffees/:id', async (req, res) => {
+            const id = req.params.id;
+            console.log('findOne', id);
+            const filter = {_id: new ObjectId(id)};
+            const result = await coffeeCollection.findOne(filter);
+            res.send(result);
         });
 
         app.post('/coffees', async (req, res) => {
