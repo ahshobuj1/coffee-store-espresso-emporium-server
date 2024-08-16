@@ -39,4 +39,13 @@
  * 3. Query/filter for the doc/coffee that has the id
  * 4. await coffeeCollection.findOne()
  * 5. res.send()
+ *
+ * * Update a Document
+ * 1. create a put request
+ * 2. get id from -> req.params.id
+ * 3. get updatedCoffee from - req.body
+ * 4. Query/filter for the doc/coffee that has the id
+ * 5. create a document that sets the plot of the coffee
+ * 6. await coffeeCollection.updateOne(para,para,para)
+ * 7. res.send()
  */
