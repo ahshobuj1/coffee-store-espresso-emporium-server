@@ -26,5 +26,10 @@
  * 3. make sure convert - toArray()
  * 4. res.send()
  *
- *
+ * * Delete a Document
+ * 1. create a delete api
+ * 2. get specific id for document - req.params.id
+ * 3. Query/filter for a coffee that has the id
+ * 4. coffeeCollection.deleteOne()
+ * 5. res.send()
  */
