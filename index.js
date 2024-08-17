@@ -26,6 +26,7 @@ async function run() {
         await client.connect();
 
         const coffeeCollection = client.db('coffeeDB').collection('coffee');
+        const userCollection = client.db('coffeeDB').collection('users');
 
         app.get('/coffees', async (req, res) => {
             const cursor = coffeeCollection.find();
@@ -51,7 +52,7 @@ async function run() {
         app.put('/coffees/:id', async (req, res) => {
             const id = req.params.id;
             const coffee = req.body;
-            console.log('updated coffee', updatedCoffee, id);
+            console.log('updated coffee', coffee, id);
             const query = {_id: new ObjectId(id)};
             const options = {upsert: true};
             const updatedCoffee = {
@@ -79,6 +80,15 @@ async function run() {
             console.log('delete this ', id);
             const query = {_id: new ObjectId(id)};
             const result = await coffeeCollection.deleteOne(query);
+            res.send(result);
+        });
+
+        // UserCollection apis
+
+        app.post('/users', async (req, res) => {
+            const user = req.body;
+            console.log('user data', user);
+            const result = await userCollection.insertOne(user);
             res.send(result);
         });
 
