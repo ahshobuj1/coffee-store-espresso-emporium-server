@@ -98,6 +98,20 @@ async function run() {
             res.send(result);
         });
 
+        app.patch('/users/:email', async (req, res) => {
+            const email = req.params.email;
+            const data = req.body;
+            console.log('patch ', email);
+            const filter = {email: email};
+            const updatedUser = {
+                $set: {
+                    lastSignInTime: data.lastSignInTime,
+                },
+            };
+            const result = await userCollection.updateOne(filter, updatedUser);
+            res.send(result);
+        });
+
         app.delete('/users/:id', async (req, res) => {
             const id = req.params.id;
             console.log('delete the id', id);
